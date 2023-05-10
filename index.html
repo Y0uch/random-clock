@@ -135,6 +135,10 @@
   
 	//const hourhand = document.querySelector('#hourhand')
 //hourhand.style.rotate='03deg'
+  
+  
+  
+  
 
 const sh = document.querySelector('#secondhand')
 //sh.style.transformOrigin = '200px -100px'
@@ -164,8 +168,10 @@ hh.style.transformOrigin = 'center'
   hh.style.rotate = '30deg'
   
 function timeTick3 () {
-  setTimeout(timeTick3,10)
-  Math.random()
+  setTimeout(timeTick3,1000)
+	var randomnum = Math.floor(Math.random() * 11);
+//	console.log(randomnum);
+  return randomnum
  // const d3 = new Date()
  // const s3 = nn.map(d3.getHours(),0,23,0,360)
  // hh.style.rotate = s3 +'deg'
@@ -179,18 +185,21 @@ window.addEventListener('load',timeTick3)
  // function getRandomArbitrary(-100, 100) {
   //}
   
-  
-function animate() {
+  function animate() {
   const date = new Date();
+  //await wait(1000)
+ // setTimeout(animate(),100)
 
   const hour = date.getHours();
   const minute = date.getMinutes();
   const second = date.getSeconds();
 
-  hh.setAttribute("transform", `rotate(${(360 / Math.random()) * hour})`);
-  mh.setAttribute("transform", `rotate(${(360 / Math.random()) * minute})`);
+  hh.setAttribute("transform", `rotate(${(1) * hour})`);
+  mh.setAttribute("transform", `rotate(${(1) * minute})`);
   sh.setAttribute("transform", `rotate(${(timeTick3) * second})`);
 
+    
+  
   
 //math.rand
   
