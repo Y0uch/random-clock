@@ -127,14 +127,14 @@
       // catch any errors
     //});
 
-  /*const minutehand = document.querySelector('#minutehand')
-minutehand.style.rotate='0deg'
+//  const minutehand = document.querySelector('#minutehand')
+//minutehand.style.rotate='0deg'
   
-  const secondhand = document.querySelector('#secondhand')
-secondhand.style.rotate='12deg'
+ // const secondhand = document.querySelector('#secondhand')
+//secondhand.style.rotate='12deg'
   
-	const hourhand = document.querySelector('#hourhand')
-hourhand.style.rotate='03deg'*/
+	//const hourhand = document.querySelector('#hourhand')
+//hourhand.style.rotate='03deg'
   
   
   
@@ -165,4 +165,63 @@ mh.style.transformOrigin = 'center'
   
 const hh = document.querySelector('#hourhand')
 hh.style.transformOrigin = 'center'
-  hh.style.rotate = '30deg
+  hh.style.rotate = '30deg'
+
+function timeTick3 () {
+  setTimeout(timeTick3,1000)
+	var randomnum = Math.floor(Math.random() * 13);
+//	console.log(randomnum);
+  return randomnum
+ // const d3 = new Date()
+ // const s3 = nn.map(d3.getHours(),0,23,0,360)
+ // hh.style.rotate = s3 +'deg'
+}  
+  
+function pauseAnimation() {
+  isPaused = true;
+
+  setTimeout(() => {
+    isPaused = false;
+    animate();
+  }, 60); // Pause for 5 seconds (5000 milliseconds)
+}
+  
+  
+//window.addEventListener('load',timeTick)
+//window.addEventListener('load',timeTick2)
+
+window.addEventListener('load',timeTick3)
+  
+ // function getRandomArbitrary(-100, 100) {
+  //}
+  
+  function animate() {
+  const date = new Date();
+  //await wait(1000)
+ // setTimeout(animate(),100)
+
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+
+  hh.setAttribute("transform", `rotate(${(timeTick3()) * second})`);
+  mh.setAttribute("transform", `rotate(${(timeTick3()) * second})`);
+  sh.setAttribute("transform", `rotate(${(timeTick3()) * second})`);
+
+    
+
+  
+  requestAnimationFrame(pauseAnimation());
+}
+
+  // requestAnimationFrame(animate);
+  
+  animate()
+  // pauseAnimation();
+  
+  
+
+  
+  
+  
+</script>
