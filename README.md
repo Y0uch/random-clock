@@ -1,2 +1,3 @@
-# sketch-3
-◕ ◞ ◕ This project was made using https://netnet.studio
+# random-clock
+URL: https://youngjuncho.me/random-clock/
+! [screenshot of the project] (
